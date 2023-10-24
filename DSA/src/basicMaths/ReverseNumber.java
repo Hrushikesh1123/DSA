@@ -1,7 +1,7 @@
 package basicMaths;
 
 public class ReverseNumber {
-    //reverse a number -2**31 to 2**31
+    //reverse a number contraint -2**31 to 2**31
     public int reverse(int x) {
         if(x==0)return 0;
         int reversedString=0;
