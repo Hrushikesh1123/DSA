@@ -10,7 +10,7 @@ public class CountDigits {
         int totalDigits=0;
         while(number>0){
             totalDigits++;
-            number/=cd 10;
+            number/=10;
         }
         System.out.println("Total digits present in this number are :"+ totalDigits);
 
