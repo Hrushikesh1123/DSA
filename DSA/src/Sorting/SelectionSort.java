@@ -2,6 +2,8 @@ package Sorting;
 
 public class SelectionSort {
     //selection sorting
+    //    Approach
+//    1.in each iteration find the smallest element wiith the help of inner loop swap with the current position of the i.
     public static void main(String[] args) {
         int[] unSortedArr=new int[]{4,2,4,1,7};
         for(int i=0;i<unSortedArr.length;i++){

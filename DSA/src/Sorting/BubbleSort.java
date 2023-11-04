@@ -1,7 +1,8 @@
 package Sorting;
 
 public class BubbleSort {
-    //bubbleSortD
+    //bubbleSort
+
     public static void main(String[] args) {
         int[] unSortedArr=new int[]{4,2,4,1,7};
         for(int i=0;i<unSortedArr.length-1;i++){
