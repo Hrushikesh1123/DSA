@@ -11,24 +11,27 @@ public class Logger {
     private Logger()  {
     }
 
-    public static Logger getInstance() throws IOException {
+    public static synchronized  Logger getInstance() throws IOException {
         if(logger==null) {
             logger = new Logger();
-            file=new FileWriter("/Users/hrushikesh/Desktop/logget.txt");
-
+            file=new FileWriter("logget.txt");
         }
             return logger;
     }
 
     public void logInfo(String message) throws IOException {
-       file.write("info"+message);
+       file.write("info"+message+ "\n");
     }
 
     public void logWarn(String message) throws IOException {
-        file.write("warn"+message);
+        file.write("warn"+message+ "\n");
     }
 
     public void logError(String message) throws IOException {
-        file.write("error"+message);
+        file.write("error"+message + "\n");
+    }
+
+    public void close() throws IOException {
+        file.close();
     }
 }
