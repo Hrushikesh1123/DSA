@@ -8,14 +8,14 @@ public class Computer {
 
     private String powerSupply;
 
-    private String Case;
+    private String caseType;
 
     public String getCase() {
-        return Case;
+        return caseType;
     }
 
     public Computer(ComputerBuilder builder){
-        this.Case=builder.getCase();
+        this.caseType=builder.getCase();
         this.cpu= builder.getCpu();
         this.Gpu= builder.getGpu();
         this.ram=builder.getRam();
@@ -24,47 +24,15 @@ public class Computer {
 
     }
 
-    public void setCase(String aCase) {
-        Case = aCase;
-    }
-
-    public String getGpu() {
-        return Gpu;
-    }
-
-    public void setGpu(String gpu) {
-        Gpu = gpu;
-    }
-
-    public String getCpu() {
-        return cpu;
-    }
-
-    public void setCpu(String cpu) {
-        this.cpu = cpu;
-    }
-
-    public Storage getStorage() {
-        return storage;
-    }
-
-    public void setStorage(Storage storage) {
-        this.storage = storage;
-    }
-
-    public Ram getRam() {
-        return ram;
-    }
-
-    public void setRam(Ram ram) {
-        this.ram = ram;
-    }
-
-    public String getPowerSupply() {
-        return powerSupply;
-    }
-
-    public void setPowerSupply(String powerSupply) {
-        this.powerSupply = powerSupply;
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "cpu='" + cpu + '\'' +
+                ", storage=" + storage +
+                ", ram=" + ram +
+                ", Gpu='" + Gpu + '\'' +
+                ", powerSupply='" + powerSupply + '\'' +
+                ", caseType='" + caseType + '\'' +
+                '}';
     }
 }

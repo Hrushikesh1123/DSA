@@ -4,11 +4,11 @@ public class ComputerBuilder {
     private String cpu;
     private Storage storage;
     private Ram ram;
-    private String Gpu;
+    private String gpu;
 
     private String powerSupply;
 
-    private String acase;
+    private String caseType;
 
     public String getCpu() {
         return cpu;
@@ -23,7 +23,7 @@ public class ComputerBuilder {
     }
 
     public String getGpu() {
-        return Gpu;
+        return gpu;
     }
 
     public String getPowerSupply() {
@@ -31,34 +31,40 @@ public class ComputerBuilder {
     }
 
     public String getCase() {
-        return acase;
+        return caseType;
     }
 
       // new ComputerBuilder()
 
 
-    public void setCpu(String cpu) {
+    public ComputerBuilder setCpu(String cpu) {
         this.cpu = cpu;
+        return this;
     }
 
-    public void setStorage(Storage storage) {
+    public ComputerBuilder setStorage(Storage storage) {
         this.storage = storage;
+        return this;
     }
 
-    public void setRam(Ram ram) {
+    public ComputerBuilder setRam(Ram ram) {
         this.ram = ram;
+        return this;
     }
 
-    public void setGpu(String gpu) {
-        Gpu = gpu;
+    public ComputerBuilder setGpu(String gpu) {
+        this.gpu = gpu;
+        return this;
     }
 
-    public void setPowerSupply(String powerSupply) {
+    public ComputerBuilder setPowerSupply(String powerSupply) {
         this.powerSupply = powerSupply;
+        return this;
     }
 
-    public void setCase(String aCase) {
-        this.acase = aCase;
+    public ComputerBuilder setCase(String caseType) {
+        this.caseType = caseType;
+        return this;
     }
 
     public  Computer build(){
