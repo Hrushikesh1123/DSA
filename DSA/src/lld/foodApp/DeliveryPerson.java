@@ -2,6 +2,15 @@ package lld.foodApp;
 
 public class DeliveryPerson extends User{
     String vehicleName;
+
+    public DeliveryPersonStatus getCurrentStatus() {
+        return currentStatus;
+    }
+
+    public void setCurrentStatus(DeliveryPersonStatus currentStatus) {
+        this.currentStatus = currentStatus;
+    }
+
     DeliveryPersonStatus currentStatus;
 
     Order currentOrder;

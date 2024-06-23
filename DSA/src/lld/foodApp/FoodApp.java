@@ -12,6 +12,7 @@ public class FoodApp
 
     private static  FoodApp foodApp=null;
     List<User>users=new ArrayList<>();
+    List<DeliveryPerson> persons=new ArrayList<>();
 
     public Order getOrderId(int id) {
         for(Order order:orders){
@@ -155,5 +156,28 @@ public class FoodApp
             }
         }
         return null;
+    }
+
+    private DeliveryPerson getDeliveryPerson(){
+       for(DeliveryPerson person:persons){
+             if(person.getUserType()==UserType.DELIVERY_PERSON&&person.getCurrentStatus().equals(DeliveryPersonStatus.AVAILABLE)){
+                return person;
+             }
+       }
+       return null;
+    }
+
+    public void saveDetails(DeliveryPerson person) {
+        lock.lock();
+        try {
+            for (DeliveryPerson deliveryPerson : persons) {
+                if (deliveryPerson.getId() == person.getId()) {
+                    persons.remove(deliveryPerson);
+                    persons.add(person);
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
     }
 }

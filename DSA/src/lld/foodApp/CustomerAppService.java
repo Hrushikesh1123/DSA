@@ -24,7 +24,9 @@ public  abstract class CustomerAppService extends AppInstance implements LoginIn
         menu.add(food);
         Order order=new Order(random.nextInt(),userId,0,OrderStatus.PENDING,menu,totalPrice,restaurant.getId());
         updateOrderInUserAndRestaurant(order,userId);
-          return order;
+        notification=NotificationFactory.getNotification("sms");
+        notification.sendNotification(user,"Order is confirmed");
+        return order;
     }
 
     private void updateOrderInUserAndRestaurant(Order order,int userId) {
@@ -39,7 +41,6 @@ public  abstract class CustomerAppService extends AppInstance implements LoginIn
         PaymentDetails paymentDetails=new PaymentDetails(userId,random.nextInt(),order.getRestaurantId(),order.getTotalPrice(),PaymentStatus.COMPLETED,user.getPaymentMode());
         order.setPaymentDetails(paymentDetails);
         updateOrderInUserAndRestaurant(order,userId);
-
     }
 
 }
